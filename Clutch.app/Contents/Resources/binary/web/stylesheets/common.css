@@ -1,0 +1,909 @@
+/*--------------------------------------
+ *
+ * G L O B A L
+ *
+ *--------------------------------------*/
+html {
+	margin: 0;
+	/* setting border: 0 hoses ie6 win window inner well border */
+	padding: 0;
+	height:100%;
+	}
+
+body {
+	font: 62.5% "lucida grande", Tahoma, Verdana, Arial, Helvetica, sans-serif; /* Resets 1em to 10px */
+	color: #323232 !important;
+	background: #FFF;
+	text-align: center;
+	margin: 0 0 30px;
+	overflow: hidden;
+	}
+
+img {
+	border: none;
+	}
+	
+input[type=text] {
+	border: 1px solid #787878;
+	}
+  
+  
+/*--------------------------------------
+ *
+ * T O P   M E N U
+ *
+ *--------------------------------------*/
+div.torrent_global_menu {
+	width: 100%;
+	height: 75px;
+	margin: 0;
+	background: transparent url('../images/graphics/menu_bg.gif') repeat-x;
+	position: fixed; 
+	left: 0; 
+	right: 0; 
+	top: 0; 
+	z-index: 2;
+	}  
+
+div.torrent_global_menu h1 {
+	height: inherit;
+	width: 205px;
+	text-indent: -9000px !important;
+	padding: 0;
+	margin: 0 0 0 5px;
+	}  
+
+div.torrent_global_menu ul {
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	}
+
+div.torrent_global_menu ul li {
+	list-style-type: none;
+	list-style-image: none;
+	float: left;
+	padding: 0;
+	margin: 15px 0 0 0;
+	vertical-align: middle;
+	height: 50px;
+	}
+
+div.torrent_global_menu ul li#filter,
+div.torrent_global_menu ul li#inspector {
+	float: right;
+	}
+
+div.torrent_global_menu ul li#inspector {
+	margin: 15px 10px 0 0; /* Need to move this away from the edge to stop strange scrollbar prob when clicked */
+	}
+
+div.torrent_global_menu ul li a {
+	color: #030303;
+	font-size: 1.1em;
+	text-decoration: none;
+	padding: 36px 10px 0 10px;
+	display: block;
+	margin: 0;
+	}
+
+div.torrent_global_menu ul li a.disabled {
+	color: #999;
+	}
+
+div.torrent_global_menu ul li#open a {
+	background: transparent url('../images/buttons/open.png') no-repeat 10px 0px ;
+	}
+
+div.torrent_global_menu ul li#open a:active {
+	background: transparent url('../images/buttons/open_on.png') no-repeat 10px 0px;
+	}
+
+div.torrent_global_menu ul li#remove a {
+	background: transparent url('../images/buttons/remove.png') no-repeat 16px 0px ;
+	}
+
+div.torrent_global_menu ul li#remove a:active {
+	background: transparent url('../images/buttons/remove_on.png') no-repeat 16px 0px;
+	}
+
+div.torrent_global_menu ul li#remove a.disabled,
+div.torrent_global_menu ul li#remove a.disabled:active {
+	background: transparent url('../images/buttons/remove_disabled.png') no-repeat 16px 0px ;
+	}
+
+div.torrent_global_menu ul li#resume_selected a{
+	background: transparent url('../images/buttons/resume_selected.png') no-repeat 19px 0px ;
+	}
+
+div.torrent_global_menu ul li#resume_selected a:active {
+	background: transparent url('../images/buttons/resume_selected_on.png') no-repeat 19px 0px;
+	}
+
+div.torrent_global_menu ul li#resume_selected a.disabled,
+div.torrent_global_menu ul li#resume_selected a.disabled:active {
+	background: transparent url('../images/buttons/resume_selected_disabled.png') no-repeat 19px 0px ;
+	}
+
+div.torrent_global_menu ul li#pause_selected a {
+	background: transparent url('../images/buttons/pause_selected.png') no-repeat 10px 0px ;
+	}
+
+div.torrent_global_menu ul li#pause_selected a:active {
+	background: transparent url('../images/buttons/pause_selected_on.png') no-repeat 10px 0px;
+	}
+
+div.torrent_global_menu ul li#pause_selected a.disabled,
+div.torrent_global_menu ul li#pause_selected a.disabled:active {
+	background: transparent url('../images/buttons/pause_selected_disabled.png') no-repeat 10px 0px ;
+	}
+
+div.torrent_global_menu ul li#pause_all a {
+	background: transparent url('../images/buttons/pause_all.png') no-repeat 19px 0px ;
+	}
+
+div.torrent_global_menu ul li#pause_all a:active {
+	background: transparent url('../images/buttons/pause_all_on.png') no-repeat 19px 0px;
+	}
+
+div.torrent_global_menu ul li#pause_all a.disabled,
+div.torrent_global_menu ul li#pause_all a.disabled:active {
+	background: transparent url('../images/buttons/pause_all_disabled.png') no-repeat 19px 0px ;
+	}
+
+div.torrent_global_menu ul li#resume_all a {
+	background: transparent url('../images/buttons/resume_all.png') no-repeat 25px 0px ;
+	}
+
+div.torrent_global_menu ul li#resume_all a:active {
+	background: transparent url('../images/buttons/resume_all_on.png') no-repeat 25px 0px;
+	}
+
+div.torrent_global_menu ul li#resume_all a.disabled,
+div.torrent_global_menu ul li#resume_all a.disabled:active {
+	background: transparent url('../images/buttons/resume_all_disabled.png') no-repeat 25px 0px ;
+	}
+
+div.torrent_global_menu ul li#filter a {
+	background: transparent url('../images/buttons/filter.png') no-repeat 8px 0px ;
+	}
+
+div.torrent_global_menu ul li#filter a:active {
+	background: transparent url('../images/buttons/filter_on.png') no-repeat 8px 0px;
+	}
+
+div.torrent_global_menu ul li#inspector a {
+	background: transparent url('../images/buttons/info.png') no-repeat 18px 0px ;
+	}
+
+div.torrent_global_menu ul li#inspector a:active {
+	background: transparent url('../images/buttons/info_toolbar_on.png') no-repeat 18px 0px;
+	}
+
+div.torrent_global_menu ul li.divider {
+	background: transparent url('../images/graphics/menu_divider.png') no-repeat top right;
+	margin: 17px 0 0 0;
+	}
+	
+	
+/*--------------------------------------
+ *
+ * G L O B A L   D E T A I L S
+ *
+ *--------------------------------------*/
+div.torrent_global_details {
+	width:100%;
+	height: 21px;
+	margin: 0;
+	background: transparent url('../images/graphics/status_bar_background.png') repeat-x;
+	font-size: 1.3em;
+	font-weight: normal;
+	border-top: 1px solid #979797;
+	border-bottom: 1px solid #979797;
+	position: fixed; 
+	left: 0; 
+	right: 0; 
+	top: 75px; 
+	z-index: 2;
+	color: #222;
+	}	
+
+div.torrent_global_details div {
+	padding: 0 10px 0 10px;
+	margin: 2px 0 0 0;
+	}	
+
+div.torrent_global_details div#torrent_global_transfer {
+	clear: left;
+	float: left;
+	}
+
+div.torrent_global_details div#torrent_global_upload, 
+div.torrent_global_details div#torrent_global_download {
+	float: right;
+	}	
+
+div.torrent_global_details div#torrent_global_upload {
+	background: transparent url('../images/graphics/status_bar_divider.png') no-repeat 0px 2px;
+	}
+  
+  
+/*--------------------------------------
+ *
+ * T O R R E N T   F I L T E R   B A R
+ *
+ *--------------------------------------*/
+div#torrent_filter_bar {
+	margin: 0;
+	height: 24px;
+	background: #C0C8D6 url('../images/graphics/filter_bar_bg.png') repeat-x;
+	border-bottom: 1px solid #979797;
+	position: fixed; 
+	left: 0; 
+	right: 0px; 
+	top: 98px; 
+	z-index: 2;
+	display: none;
+	}
+
+div#torrent_filter_bar ul {
+	height: 17px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	display: inline;
+	}
+
+div#torrent_filter_bar ul li {
+	list-style-type: none;
+	list-style-image: none;
+	float: left;
+	padding: 0;
+	margin: 4px 2px 0 5px;
+	vertical-align: middle;
+	height: 17px;
+	}
+	
+div#torrent_filter_bar ul li a {
+	font-size: 1.2em;
+	color: #4E4E4F;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 0 7px 0 7px;
+	margin: 0;
+	height: 17px;
+	display: block;
+	}
+
+div#torrent_filter_bar ul li:hover {
+	background: transparent url('../images/graphics/filter_hover_left.png') no-repeat top left;
+	}
+
+div#torrent_filter_bar ul li:hover a {
+	background: transparent url('../images/graphics/filter_hover_right.png') no-repeat top right;
+	color: #fff !important;
+	}
+
+div#torrent_filter_bar ul li.selected {
+	background: transparent url('../images/graphics/filter_selected_left.png') no-repeat top left;
+	}
+
+div#torrent_filter_bar ul li.selected a {
+	background: transparent url('../images/graphics/filter_selected_right.png') no-repeat top right;
+	color: #fff !important;
+	}
+	
+div#torrent_filter_bar input#torrent_search {
+	float: right;
+	height: 15px;
+	width: 100px;
+	border:solid 0 #fff;
+	padding-left: 2px;
+	padding-right: 2px;
+	margin: 4px 5px 0 0;
+	}
+	
+div#torrent_filter_bar input#torrent_search.blur {
+	color: #999;
+	}
+ 
+ 
+/*--------------------------------------
+ *
+ * T O R R E N T   C O N T A I N E R
+ *
+ *--------------------------------------*/
+div#torrent_container {
+	position: fixed;
+	top: 98px;
+	bottom: 22px;
+	right: 0px;
+	left: 0px;
+	padding:0px;
+	margin: 0px;
+	overflow: auto;
+}
+
+ul.torrent_list {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+ul.torrent_list li {
+	list-style-type: none;
+	list-style-image: none;
+	clear: both;
+	display: block;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+	-moz-user-select: none;
+	}
+	
+ul.torrent_list li.torrent {
+	border-bottom: 1px solid #ccc;
+	padding: 3px 16px 3px 10px; /* Make space for buttons on the right */
+	margin: 0 !important;	
+	}
+
+	
+ul.torrent_list li.torrent.even {
+	background-color: #EDF3FE;
+	}
+
+	
+ul.torrent_list li.torrent.selected {
+	background-color: #3875D7;
+	color: #FFF;
+	}
+	
+ul.torrent_list li.torrent div.torrent_name {
+	font-size: 1.3em;
+	font-weight: bold;
+	}
+	
+ul.torrent_list li.torrent div.torrent_progress_details,
+ul.torrent_list li.torrent div.torrent_peer_details {
+	font-size: 1.1em;
+	}
+	
+ul.torrent_list li.torrent div.torrent_progress_bar.complete {
+	background: transparent url('../images/progress/complete.png') repeat-x;
+	border: 1px solid #29AD35;
+	}
+	
+ul.torrent_list li.torrent div.torrent_progress_bar.in_progress {
+	background: transparent url('../images/progress/in_progress.png') repeat-x;
+	border: 1px solid #3F79EE;
+	border-right: transparent;
+	}
+	
+ul.torrent_list li.torrent div.torrent_progress_bar.incomplete {
+	background: transparent url('../images/progress/incomplete.png') repeat-x;
+	border: 1px solid #C8CACD;
+	border-left: transparent;
+	}
+	
+ul.torrent_list li.torrent div.torrent_progress_bar.incomplete_stopped {
+	background: transparent url('../images/progress/incomplete_stopped.png') repeat-x;
+	border: 1px solid #939393;
+	border-right: transparent;
+	}
+	
+ul.torrent_list li.torrent div.torrent_progress_bar.complete_stopped {
+	background: transparent url('../images/progress/complete_stopped.png') repeat-x;
+	border: 1px solid #939393;
+	}
+	
+ul.torrent_list li.torrent div.torrent_progress_bar {
+	height: 10px;
+	margin: 3px 0 3px 0;
+	float:left;
+	line-height: 1px;
+	font-size:1px;
+	width: 100%;
+	}	
+
+ul.torrent_list li.torrent a {
+	float: right;
+	position: relative;
+	right: -12px;
+	top: -16px;
+	padding: 0 0px 0 2px;
+	}
+  
+  
+/*--------------------------------------
+ *
+ * T O R R E N T   I N S P E C T O R
+ *
+ *--------------------------------------*/
+
+div#torrent_inspector {
+	position: fixed;
+	top: 98px;
+	right: 0px;
+	bottom: 22px;
+	width: 350px;
+	background-color: #ddd;
+	border-left: #aaa 1px solid;
+	z-index: 2;
+	text-align: left;
+	}
+	
+div#torrent_inspector h1#torrent_inspector_name {
+	font-size: 1.4em;
+	margin: 0;
+	padding: 5px 0 0 5px;
+	}
+	
+div#torrent_inspector span#torrent_inspector_size {
+	font-size: 1.2em;
+	margin: 0;
+	padding: 5px 0 0 5px;
+	}
+	
+div#torrent_inspector ul.torrent_inspector_tabs {
+	margin: 0 0 0 113px; /* Center tabs */
+	padding: 0;
+	}
+	
+/* Force anything after the menu to display on a new line -
+   looks like overkill, maybe an easier way to do this */
+div#torrent_inspector ul.torrent_inspector_tabs:after {
+	content: ".";
+	display: block;
+	height: 0;
+	font-size:0;
+	clear: both;
+	visibility:hidden;
+	}
+	
+div#torrent_inspector ul.torrent_inspector_tabs li {
+	float: left;
+	list-style-type: none;
+	}
+	
+div#torrent_inspector ul.torrent_inspector_tabs li a {
+	display: block;
+	margin: 10px -1px 3px 0; /* Collapse horizontal borders */
+	padding:4px;
+	background: transparent url('../images/buttons/info_tab_back.png') repeat-x;;
+	border-left: 1px solid #787878;
+	border-right: 1px solid #787878;
+	width: 50px;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	color: #323232;
+	cursor: pointer;
+	}
+	
+div#torrent_inspector ul.torrent_inspector_tabs li a.selected {
+	background: transparent url('../images/buttons/info_tab_selected.png') repeat-x;
+	}
+	
+div#torrent_inspector div.torrent_inspector_section h2 {
+	border-top: 1px solid #888;
+	font-size: 1.1em;
+	margin: 5px 5px 0 5px;
+	padding: 2px 0 2px 0;
+	}
+	
+div#torrent_inspector div.torrent_inspector_section label {
+	margin: 0px 3px 0 10px;
+	width: 75px;
+	display: block;
+	float: left;
+	}
+	
+div#torrent_inspector div.torrent_inspector_section div {
+	height: 17px;
+	width: 210px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	}
+	
+
+/*--------------------------------------
+ *
+ * T O R R E N T   F O O T E R
+ *
+ *--------------------------------------*/
+ 
+ div.torrent_footer {
+ 	width: 100%;
+ 	height: 22px;
+ 	margin: 0;
+ 	padding: 0;
+	border-bottom: 1px solid #979797;
+	border-top: 1px solid #979797;
+	background: #E6E6E6 url('../images/graphics/footer_bg.png') repeat-x; 
+	position: fixed; 
+	left: 0px; 
+	right: 0px;	
+	bottom: -1px; 
+	z-index: 2;
+ 	}
+	
+div.torrent_footer ul#settings_menu li#button {
+	height: 22px;
+ 	width: 30px;
+	background: transparent url('../images/buttons/footer_action_button.png') no-repeat top left;
+ 	border-right: 1px solid #979797;
+ 	margin: 0 1px 0 0;
+ 	padding: 0;
+ 	float: left;
+	position: relative; 
+	}
+	
+div.torrent_footer div#disk_space_container {
+    float: right;
+    font-size: 1.1em;
+    line-height: 22px;
+    vertical-align: middle;
+    margin: 0 20px 0 0;
+    padding: 0px;
+    }
+
+
+/*--------------------------------------
+ *
+ * D I A L O G S
+ *
+ *--------------------------------------*/
+div.dialog_container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	text-align: center;
+	}
+	
+div.dialog_container div.dialog_top_bar {
+	text-align: center;
+	background: #DBDBDB url('../images/graphics/dialog_top.png') no-repeat; 
+	margin: 15px auto 0 auto;
+	width: 426px;
+	height: 4px;
+	}
+	
+div.dialog_container div.dialog_window {
+	background-color: #DBDBDB;
+	margin: -3px auto 0 auto;
+	filter:alpha(opacity=95);
+	-moz-opacity:.95;
+	opacity:.95;
+	border: 1px solid #B5B5B5;
+	border-top: none;
+	text-align: left;
+	width: 420px;
+	height: 135px;
+	}
+	
+div#prefs_container div.dialog_window {
+	width: 410px;
+	height: 400px;
+	padding: 5px;
+	}
+	
+div.dialog_container div.dialog_window img {
+	margin: 20px 20px 0 20px;
+	float: left;
+	}
+	
+div.dialog_container div.dialog_window h2.dialog_heading {
+	display: block;
+	float: left;
+	width: 305px;
+	}
+	
+div.dialog_container div.dialog_window div.dialog_message {
+	float: left;
+	width: 305px;
+	height: 55px;
+	overflow: hidden;
+	}
+	
+div.dialog_container div.dialog_window a {
+	display: block;
+	float: right;
+	margin: 5px 10px 0 0;
+	padding: 5px;
+	background-color: #EEE;
+	border: 1px solid #787878;
+	width: 50px;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	color: #323232;
+	}
+	
+div.dialog_container div.dialog_window a:hover,
+div.dialog_container div.dialog_window a:active {
+	background: #C0C8D6 url('../images/graphics/filter_bar_bg.png') repeat-x;
+	}
+	
+div#upload_container div.dialog_window {	
+	height: 170px !important;
+	} 
+	
+div#upload_container div.dialog_window div.dialog_message {
+	height: 90px;
+	}
+	
+div#upload_container div.dialog_window div.dialog_message label {
+	margin-top: 5px;
+	display: block;
+	}
+	
+div#upload_container div.dialog_window div.dialog_message input {
+	margin: 5px 0 0 0;
+	padding: 1px;
+	background-color: #EEE;
+	border: 1px solid #787878;
+	display: block;
+	}
+	
+div#upload_container div.dialog_window div.dialog_message input[type=text] {
+	width: 245px;
+	}
+	
+div.dialog_container div.dialog_window form {
+	margin: 0px;
+	padding: 0px;
+	}
+	
+iframe#torrent_upload_frame {
+	display: block; /* Don't change this : safari forms won't target hidden frames (they open a new window) */
+	position: absolute;
+	top: -1000px;
+	left: -1000px;
+	width: 0px;
+	height: 0px;
+	border: none;
+	padding: 0;
+	margin: 0;
+	}
+
+div#prefs_container label {
+	font-size: 1.1em;
+	line-height: 25px;
+	vertical-align: center;
+	display: block;
+	}
+
+div#prefs_container label.category {
+	clear: both;
+	font-size: 1.2em;
+	margin: 0 0 0 2px;
+	}
+
+div#prefs_container label.item {
+	margin: 0 5px 0 20px;
+	float: left;
+	}
+
+div#prefs_container label.suffix {
+	margin: 0 5px 0 10px;
+	float: left;
+	}
+
+div#prefs_container div.download_location label.item,
+div#prefs_container div.port label.item,
+div#prefs_container div.web_gui label.item {
+	width: 112px;
+	clear: left;
+	}
+	
+div#prefs_container div.auto_start label.item,
+div#prefs_container div.encryption label.item,
+div#prefs_container div.limit_total label.item {
+	margin: 0 5px 0 0;
+	}
+	
+div#prefs_container div.limit_total label.item {
+	width: 92px;
+	}
+	
+div#prefs_container div.preference input[type=checkbox] {
+	margin: 4px 5px 0 22px;
+	clear: left;
+	}
+	
+div#prefs_container div.preference input[type=text] {
+	width: 50px;
+	}
+
+div#prefs_container div.preference input {
+	float: left;
+	}
+
+div#prefs_container div.download_location input {
+	width: 261px;
+	}
+
+div#prefs_container a {
+	clear: left;
+	}
+	
+div#prefs_container h2.dialog_heading {
+	display: none;
+	}
+	
+div#prefs_container div#pref_error {
+	display: none;
+	width: 395px;
+	margin: 6px auto 6px auto;
+	padding: 3px 0 3px 0;
+	border: 2px solid #cc3333;
+	color: #cc3333;
+	font-size: 1.2em;
+	vertical-align: middle;
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	background-color: #FFEFEF;
+	}
+
+
+/*--------------------------------------
+ *
+ * U N S U P P O R T E D   B R O W S E R
+ *
+ *--------------------------------------*/
+div#unsupported_browser {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	text-align: center;
+	background: #fff;
+	}
+	
+div#unsupported_browser div.dialog_top_bar {
+	width: 450px;
+	height: 21px;
+	margin: 100px auto 0 auto;
+	background: transparent url('../images/graphics/status_bar_background.png') repeat-x;
+	border: 1px solid #979797;
+	color: #222;
+	}
+	
+div#unsupported_browser div.dialog_window{
+	width: 450px;
+	height: 200px;
+	margin: 0 auto 0 auto;
+	border: 1px solid #979797;	
+	border-top: none;
+	} 
+	
+div#unsupported_browser div.dialog_window img {
+	margin: 10px;
+	}
+	
+div#unsupported_browser div.dialog_window img.logo {
+	margin: 20px 20px 0 20px;
+	float: left;
+	}
+	
+div#unsupported_browser div.dialog_window h2 {
+	margin: 40px 0 40px 0;
+	display: block;
+	float: left;
+	width: 305px;
+	}
+	
+div#unsupported_browser div.dialog_window p {
+	clear: both;
+	font-size: 1.4em;
+	}
+
+
+/*--------------------------------------
+ *
+ * T R A N S   M E N U
+ *
+ *--------------------------------------*/
+.trans_menu {
+	margin: 0;
+	padding: 0;
+	cursor: default;
+	}
+
+.trans_menu, .trans_menu ul {
+	list-style: none;
+	}
+	
+.trans_menu ul {
+	min-width: 170px;
+	background-color: #F4F5EB;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+	padding: 2px 0 2px 0;
+	text-align: left;
+	list-style: none;
+	}
+
+.trans_menu li {
+	background-color: #F4F5EB;
+	margin: 0 2px;
+	padding: 5px 15px;
+	color: #555;
+	font-size: 11px !important;
+	cursor: default;
+	border: none;
+	text-indent: auto !important;
+	width: inherit;
+	}
+
+.trans_menu li.hover {
+	z-index: 1 !important; /* the hover z-index has to be below the normal one the hovering items may be drawn over a submenu */
+	background-color: #3875D7;
+	color: #ddd;
+	border: none;
+	}
+
+.trans_menu li.separator, .trans_menu li.separator.hover {
+	background-color: #F4F5EB;
+	border-top: 1px solid #ddd;
+	line-height: 1px;
+	height: 1px;
+	margin: 2px 0 2px 0;
+	padding: 0px;
+	}
+
+.trans_menu span.arrow {
+	float: right;
+	margin: 0 -10px 0 0;
+	}
+
+.trans_menu span.selected {
+	margin: 0 0 0 -14px;
+	font-size: 14px;
+	}
+	
+.trans_menu div.outerbox {
+	display: none;
+	}
+
+.trans_menu div.inner {
+	left: 0;
+	margin: 0;
+	}
+	
+.trans_menu div.inner div.outerbox {
+	margin: 0;
+	left: 98px;
+	}
+	
+.trans_menu li.main {
+	float: left;
+	padding: 0 10px;
+	}
+	
+.trans_menu li.main li {
+	z-index: 2;
+	min-width: 78px;
+	}
+	
+.trans_menu a {
+	text-decoration: none;
+	cursor: default;
+	}
+
+
+
